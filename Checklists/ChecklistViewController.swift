@@ -1,14 +1,6 @@
-//
-//  ViewController.swift
-//  Checklists
-//
-//  Created by Josiah Mory on 10/1/16.
-//  Copyright © 2016 kickinbahk Productions. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+class ChecklistViewController: UITableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
