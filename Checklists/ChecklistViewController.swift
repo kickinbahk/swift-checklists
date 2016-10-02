@@ -49,25 +49,13 @@ class ChecklistViewController: UITableViewController {
     return items.count
   }
   
-  func configureCheckmark(for cell: UITableViewCell,
-                          at indexPath: IndexPath) {
-    let item = items[indexPath.row]
-    
-    if item.checked {
-      cell.accessoryType = .checkmark
-    } else {
-      cell.accessoryType = .none
-    }
-  }
-  
   override func tableView(_ tableView: UITableView,
                           didSelectRowAt indexPath: IndexPath) {
     
     if let cell = tableView.cellForRow(at: indexPath) {
       let item = items[indexPath.row]
-      item.checked = !item.checked
-      
-      configureCheckmark(for: cell, at: indexPath)
+      item.toggleChecked()
+      configureCheckmark(for: cell, with: item)
     }
     
     tableView.deselectRow(at: indexPath, animated: true)
@@ -75,14 +63,27 @@ class ChecklistViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView,
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
     let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath)
     let item = items[indexPath.row]
+
+    configureText(for: cell, with: item)
+    configureCheckmark(for: cell, with: item)
+    return cell
+  }
+  
+  func configureCheckmark(for cell: UITableViewCell,
+                          with item: ChecklistItem) {
+    if item.checked {
+      cell.accessoryType = .checkmark
+    } else {
+      cell.accessoryType = .none
+    }
+  }
+  
+  func configureText (for cell: UITableViewCell,
+                      with item: ChecklistItem) {
     let label = cell.viewWithTag(1000) as! UILabel
     label.text = item.text
-    
-    configureCheckmark(for: cell, at: indexPath)
-    return cell
   }
 
   override func didReceiveMemoryWarning() {
