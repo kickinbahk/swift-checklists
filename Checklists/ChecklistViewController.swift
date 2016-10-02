@@ -7,9 +7,9 @@ class ChecklistViewController: UITableViewController {
   var row3text = "Catch the Big Game"
   var row4text = "Eat Ice Cream"
   var row0checked = false
-  var row1checked = false
+  var row1checked = true
   var row2checked = false
-  var row3checked = false
+  var row3checked = true
   var row4checked = false
 
   override func viewDidLoad() {
