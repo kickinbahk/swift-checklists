@@ -71,6 +71,14 @@ class ChecklistViewController: UITableViewController {
     return cell
   }
   
+  override func tableView(_ tableView: UITableView,
+                          commit editingStyle: UITableViewCellEditingStyle,
+                          forRowAt indexPath: IndexPath) {
+    items.remove(at: indexPath.row)
+    let indexPaths = [indexPath]
+    tableView.deleteRows(at: indexPaths, with: .automatic)
+  }
+  
   @IBAction func addItem() {
     let newRowIndex = items.count
     
@@ -80,7 +88,7 @@ class ChecklistViewController: UITableViewController {
     items.append(item)
     
     let indexPath = IndexPath(row: newRowIndex, section: 0)
-    let indexPaths = [ indexPath ]
+    let indexPaths = [indexPath]
     tableView.insertRows(at: indexPaths, with: .automatic)
   }
   
