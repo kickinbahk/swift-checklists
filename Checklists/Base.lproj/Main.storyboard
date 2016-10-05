@@ -23,7 +23,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEV-db-gBH">
-                                            <frame key="frameInset" minX="29" width="233" height="43"/>
+                                            <frame key="frameInset" minX="29" width="271" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -58,7 +58,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5D-OP-kRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978.75" y="19.014084507042252"/>
+            <point key="canvasLocation" x="978.39999999999998" y="18.440779610194905"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="aWv-LM-0KV">
@@ -78,11 +78,9 @@
                                             <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ggq-X5-xdG">
-                                                    <frame key="frameInset" minX="8" minY="6" width="359" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="22" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ggq-X5-xdG">
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="done" destination="Re9-av-DwW" eventType="editingDidEndOnExit" id="wda-Nf-UTZ"/>
@@ -90,6 +88,12 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ggq-X5-xdG" secondAttribute="bottom" constant="7" id="0Ve-wc-djO"/>
+                                                <constraint firstAttribute="trailing" secondItem="ggq-X5-xdG" secondAttribute="trailing" constant="8" id="3uN-vd-qgJ"/>
+                                                <constraint firstItem="ggq-X5-xdG" firstAttribute="top" secondItem="BJY-q5-ZkV" secondAttribute="top" constant="6" id="6kS-FK-KnZ"/>
+                                                <constraint firstItem="ggq-X5-xdG" firstAttribute="leading" secondItem="BJY-q5-ZkV" secondAttribute="leading" constant="8" id="vuK-0x-cK4"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
