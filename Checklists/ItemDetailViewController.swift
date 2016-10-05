@@ -20,11 +20,12 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    if let item = itemToEdit {
-      title = "Edit Item"
-      textField.text = item.text
-      doneBarButton.isEnabled = true
-    }
+    guard let item = itemToEdit else { return }
+
+    title = "Edit Item"
+    textField.text = item.text
+    textField.delegate = self // set the delegate
+    doneBarButton.isEnabled = true
   }
   override func tableView(_ tableView: UITableView,
                           willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -59,11 +60,12 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
                  replacementString string: String) -> Bool {
     let oldText = textField.text! as NSString
     let newText = oldText.replacingCharacters(in: range, with: string) as NSString
-    doneBarButton.isEnabled = (newText.length > 0)
-    
-    // TODO: Clear also grays out done button. 
-    
+    doneBarButton.isEnabled = ((newText.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines) as NSString).length > 0) // if someone just enters in whitespace it's not very useful
     return true
   }
 
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        doneBarButton.isEnabled = false
+        return true
+    }
 }
