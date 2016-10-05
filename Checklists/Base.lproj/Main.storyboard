@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Checklists-->
+        <!--Name of the Checklist-->
         <scene sceneID="CNl-hP-7iC">
             <objects>
                 <tableViewController id="RWd-u7-mTp" customClass="ChecklistViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -48,7 +48,7 @@
                             <outlet property="delegate" destination="RWd-u7-mTp" id="eE7-MB-QnK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Checklists" id="Lyc-r7-CGC" userLabel="Checklists">
+                    <navigationItem key="navigationItem" title="Name of the Checklist" id="Lyc-r7-CGC" userLabel="Checklists">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="soZ-QB-daM">
                             <connections>
                                 <segue destination="M3J-Bk-6Q5" kind="presentation" identifier="AddItem" id="AaH-5R-o6N"/>
@@ -58,7 +58,20 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5D-OP-kRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978.39999999999998" y="18.440779610194905"/>
+            <point key="canvasLocation" x="460" y="779"/>
+        </scene>
+        <!--Checklists-->
+        <scene sceneID="viZ-v5-sZe">
+            <objects>
+                <tableViewController id="JVq-Tk-SQ5" customClass="AllListsViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Checklists" id="HyR-rm-aa3"/>
+                    <connections>
+                        <segue destination="RWd-u7-mTp" kind="show" identifier="ShowChecklist" id="hhT-oM-pQC"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p8e-qC-xbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="926" y="18"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="aWv-LM-0KV">
@@ -123,7 +136,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5R-y0-WAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2831.1999999999998" y="17.541229385307346"/>
+            <point key="canvasLocation" x="2276" y="779"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pha-XI-rav">
@@ -136,7 +149,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="RWd-u7-mTp" kind="relationship" relationship="rootViewController" id="Zoi-gV-5B4"/>
+                        <segue destination="JVq-Tk-SQ5" kind="relationship" relationship="rootViewController" id="RA9-sj-XW4"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ju4-bq-BHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -159,10 +172,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aWV-w2-oTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1833.75" y="17.95774647887324"/>
+            <point key="canvasLocation" x="1431" y="779"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nDt-wo-43R"/>
+        <segue reference="AaH-5R-o6N"/>
     </inferredMetricsTieBreakers>
 </document>
