@@ -6,6 +6,8 @@ protocol AddItemViewControllerDelegate: class {
   func addItemViewControllerDidCancel(_ controller: AddItemViewController)
   func addItemViewController(_ controller: AddItemViewController,
                              didFinishAdding item: ChecklistItem)
+  func addItemViewController(_ controller: AddItemViewController,
+                             didFinishEditing item: ChecklistItem)
 }
 
 class AddItemViewController: UITableViewController, UITextFieldDelegate {
@@ -20,6 +22,7 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     if let item = itemToEdit {
       title = "Edit Item"
       textField.text = item.text
+      doneBarButton.isEnabled = true
     }
   }
   override func tableView(_ tableView: UITableView,
@@ -38,11 +41,16 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
   
 
   @IBAction func done() {
-    let item = ChecklistItem()
-    item.text = textField.text!
-    item.checked = false
-    
-    delegate?.addItemViewController(self, didFinishAdding: item)
+    if let item = itemToEdit {
+      item.text = textField.text!
+      delegate?.addItemViewController(self, didFinishEditing: item)
+    } else {
+      let item = ChecklistItem()
+      item.text = textField.text!
+      item.checked = false
+      
+      delegate?.addItemViewController(self, didFinishAdding: item)
+    }
   }
 
   func textField(_ textField: UITextField,
@@ -58,4 +66,5 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     
     return true
   }
+
 }
