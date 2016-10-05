@@ -6,38 +6,8 @@ class ChecklistViewController: UITableViewController,
   
   required init?(coder aDecoder: NSCoder) {
     items = [ChecklistItem]()
-    
-    let row0item = ChecklistItem()
-    row0item.text = "Walk the Dog"
-    row0item.checked = false
-    items.append(row0item)
-    
-    let row1item = ChecklistItem()
-    row1item.text = "Brush Teeth"
-    row1item.checked = true
-    items.append(row1item)
-    
-    let row2item = ChecklistItem()
-    row2item.text = "Learn iOS Developent"
-    row2item.checked = true
-    items.append(row2item)
-    
-    let row3item = ChecklistItem()
-    row3item.text = "Catch the Big Game"
-    row3item.checked = false
-    items.append(row3item)
-    
-    let row4item = ChecklistItem()
-    row4item.text = "Eat Ice Cream"
-    row4item.checked = true
-    items.append(row4item)
-    
-    let row5item = ChecklistItem()
-    row5item.text = "Check Email"
-    row5item.checked = false
-    items.append(row5item)
-    
     super.init(coder: aDecoder)
+    loadChecklistItems()
   }
 
   override func viewDidLoad() {
@@ -57,6 +27,7 @@ class ChecklistViewController: UITableViewController,
       let item = items[indexPath.row]
       item.toggleChecked()
       configureCheckmark(for: cell, with: item)
+      saveChecklistItems()
     }
     
     tableView.deselectRow(at: indexPath, animated: true)
@@ -78,6 +49,7 @@ class ChecklistViewController: UITableViewController,
     items.remove(at: indexPath.row)
     let indexPaths = [indexPath]
     tableView.deleteRows(at: indexPaths, with: .automatic)
+    saveChecklistItems()
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -130,6 +102,7 @@ class ChecklistViewController: UITableViewController,
     let indexPaths = [indexPath]
     tableView.insertRows(at: indexPaths, with: .automatic)
     dismiss(animated: true, completion: nil)
+    saveChecklistItems()
   }
   
   func itemDetailViewController(_ controller: ItemDetailViewController,
@@ -141,8 +114,37 @@ class ChecklistViewController: UITableViewController,
       }
     }
     dismiss(animated: true, completion: nil)
+    saveChecklistItems()
   }
   
+  func documentsDirectory() -> URL {
+    let paths = FileManager.default.urls(for: .documentDirectory,
+                                         in: .userDomainMask)
+    return paths[0]
+  }
+  
+  func dataFilePath() -> URL {
+    return documentsDirectory().appendingPathComponent("Checklists.plist")
+  }
+  
+  func saveChecklistItems() {
+    let data = NSMutableData()
+    let archiver = NSKeyedArchiver(forWritingWith: data)
+    archiver.encode(items, forKey: "ChecklistItems")
+    archiver.finishEncoding()
+    data.write(to: dataFilePath(), atomically: true)
+  }
+  
+  func loadChecklistItems() {
+    let path = dataFilePath()
+    if let data = try? Data(contentsOf: path) {
+      let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
+      items = unarchiver.decodeObject(forKey: "ChecklistItems")
+                                                        as! [ChecklistItem]
+      unarchiver.finishDecoding()
+    }
+    
+  }
   
 
   override func didReceiveMemoryWarning() {
