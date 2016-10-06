@@ -11,15 +11,15 @@
             <objects>
                 <tableViewController id="RWd-u7-mTp" customClass="ChecklistViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Eze-R8-O24">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="WFI-rQ-tpl">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WFI-rQ-tpl" id="KJi-Zd-Ves">
-                                    <frame key="frameInset" width="308" height="43"/>
+                                    <frame key="frameInset" width="253" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEV-db-gBH">
@@ -78,22 +78,22 @@
             <objects>
                 <tableViewController id="Re9-av-DwW" customClass="ItemDetailViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ePD-cR-HJA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection id="zZ5-cH-3Bw">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="VG1-TI-g3b">
-                                        <rect key="frame" x="0.0" y="99" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VG1-TI-g3b" id="BJY-q5-ZkV">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="22" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ggq-X5-xdG">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ggq-X5-xdG">
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="done" destination="Re9-av-DwW" eventType="editingDidEndOnExit" id="wda-Nf-UTZ"/>
@@ -102,10 +102,10 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="ggq-X5-xdG" secondAttribute="bottom" constant="7" id="0Ve-wc-djO"/>
-                                                <constraint firstAttribute="trailing" secondItem="ggq-X5-xdG" secondAttribute="trailing" constant="8" id="3uN-vd-qgJ"/>
-                                                <constraint firstItem="ggq-X5-xdG" firstAttribute="top" secondItem="BJY-q5-ZkV" secondAttribute="top" constant="6" id="6kS-FK-KnZ"/>
-                                                <constraint firstItem="ggq-X5-xdG" firstAttribute="leading" secondItem="BJY-q5-ZkV" secondAttribute="leading" constant="8" id="vuK-0x-cK4"/>
+                                                <constraint firstAttribute="bottom" secondItem="ggq-X5-xdG" secondAttribute="bottom" constant="6" id="Ccd-pk-ftJ"/>
+                                                <constraint firstItem="ggq-X5-xdG" firstAttribute="leading" secondItem="BJY-q5-ZkV" secondAttribute="leading" constant="8" id="QoZ-w8-JYc"/>
+                                                <constraint firstAttribute="trailing" secondItem="ggq-X5-xdG" secondAttribute="trailing" constant="8" id="d6t-kS-cmK"/>
+                                                <constraint firstItem="ggq-X5-xdG" firstAttribute="top" secondItem="BJY-q5-ZkV" secondAttribute="top" constant="7" id="ijd-3Z-E2F"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -136,7 +136,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5R-y0-WAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2276" y="779"/>
+            <point key="canvasLocation" x="2274.375" y="778.52112676056333"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pha-XI-rav">
