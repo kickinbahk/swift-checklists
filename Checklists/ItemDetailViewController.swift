@@ -64,8 +64,8 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     return true
   }
 
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        doneBarButton.isEnabled = false
-        return true
-    }
+  func textFieldShouldClear(_ textField: UITextField) -> Bool {
+      doneBarButton.isEnabled = false
+      return true
+  }
 }

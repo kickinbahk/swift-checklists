@@ -3,6 +3,7 @@ import UIKit
 class ChecklistViewController: UITableViewController,
                                         ItemDetailViewControllerDelegate {
   var items: [ChecklistItem]
+  var checklist: Checklist!
   
   required init?(coder aDecoder: NSCoder) {
     items = [ChecklistItem]()
@@ -12,6 +13,7 @@ class ChecklistViewController: UITableViewController,
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = checklist.name
     // Do any additional setup after loading the view, typically from a nib.
   }
   
