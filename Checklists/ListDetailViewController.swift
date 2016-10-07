@@ -58,7 +58,6 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
   func textField(_ textField: UITextField,
                  shouldChangeCharactersIn range: NSRange,
                  replacementString string: String) -> Bool {
-    print("this func fired")
     let oldText = textField.text! as NSString
     let newText = oldText.replacingCharacters(in: range, with: string)
                                                           as NSString

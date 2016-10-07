@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func saveData() {
-    DataModel.saveChecklists()
+    dataModel.saveChecklists()
   }
 
 }
