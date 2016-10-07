@@ -33,6 +33,7 @@ class AllListsViewController: UITableViewController,
     let checklist = dataModel.lists[indexPath.row]
     cell.textLabel!.text = checklist.name
     cell.accessoryType = .detailDisclosureButton
+    cell.detailTextLabel!.text = "\(checklist.countUncheckedItems()) Remaning"
     
     return cell
   }
@@ -73,7 +74,7 @@ class AllListsViewController: UITableViewController,
       withIdentifier: cellIdentifier) {
       return cell
     } else {
-      return UITableViewCell(style: .default,
+      return UITableViewCell(style: .subtitle,
                              reuseIdentifier: cellIdentifier)
     }
   }
