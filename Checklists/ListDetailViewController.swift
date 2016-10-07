@@ -11,7 +11,7 @@ protocol ListDetailViewControllerDelegate: class {
 }
 
 class ListDetailViewController: UITableViewController, UITextFieldDelegate {
-  @IBOutlet weak var textField: UITextField!
+  @IBOutlet weak var editListTextField: UITextField!
   @IBOutlet weak var doneBarButton: UIBarButtonItem!
   
   weak var delegate: ListDetailViewControllerDelegate?
@@ -21,16 +21,18 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    if let checklist = checklistToEdit {
-      title = "Edit Checklist"
-      textField.text = checklist.name
-      doneBarButton.isEnabled = true
-    }
+    guard let checklist = checklistToEdit else {return}
+    
+    title = "Edit Checklist"
+    editListTextField.text = checklist.name
+    editListTextField.delegate = self
+    doneBarButton.isEnabled = true
+
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    textField.becomeFirstResponder()
+    editListTextField.becomeFirstResponder()
   }
   
   override func tableView(_ tableView: UITableView,
@@ -45,11 +47,11 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
   
   @IBAction func done() {
     if let checklist = checklistToEdit {
-      checklist.name = textField.text!
+      checklist.name = editListTextField.text!
       delegate?.listDetailViewController(self,
                                         didFinishEditing: checklist)
     } else {
-      let checklist = Checklist(name: textField.text!)
+      let checklist = Checklist(name: editListTextField.text!)
       delegate?.listDetailViewController(self,
                                          didFinishAdding: checklist)
     }
@@ -61,11 +63,17 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
     let oldText = textField.text! as NSString
     let newText = oldText.replacingCharacters(in: range, with: string)
                                                           as NSString
-    doneBarButton.isEnabled = (newText.length > 0)
+    doneBarButton.isEnabled = ((newText.trimmingCharacters(
+                                        in: NSCharacterSet
+                                            .whitespacesAndNewlines)
+                                            as NSString).length > 0)
     return true
   }
   
-  
+  func textFieldShouldClear(_ textField: UITextField) -> Bool {
+    doneBarButton.isEnabled = false
+    return true
+  }
   
   
 }

@@ -137,7 +137,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="doneBarButton" destination="hL6-k9-Lwg" id="pnU-Ia-Elw"/>
-                        <outlet property="textField" destination="dxY-56-iD1" id="gJh-Gf-HmU"/>
+                        <outlet property="editListTextField" destination="dxY-56-iD1" id="Tv3-sN-3mm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOB-Mj-Qk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -210,7 +210,7 @@
                                 <action selector="cancel" destination="Re9-av-DwW" id="Vm2-fx-UIc"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="EKr-jk-9U1">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="EKr-jk-9U1">
                             <connections>
                                 <action selector="done" destination="Re9-av-DwW" id="EIV-fF-bPs"/>
                             </connections>
