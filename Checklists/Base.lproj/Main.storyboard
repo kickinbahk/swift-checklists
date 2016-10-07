@@ -129,7 +129,7 @@
                                 <action selector="cancel" destination="DcG-vD-iIG" id="P2l-5q-5Ck"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="hL6-k9-Lwg">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" style="done" id="hL6-k9-Lwg">
                             <connections>
                                 <action selector="done" destination="DcG-vD-iIG" id="PZd-kS-zyV"/>
                             </connections>
@@ -210,7 +210,7 @@
                                 <action selector="cancel" destination="Re9-av-DwW" id="Vm2-fx-UIc"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="EKr-jk-9U1">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" style="done" id="EKr-jk-9U1">
                             <connections>
                                 <action selector="done" destination="Re9-av-DwW" id="EIV-fF-bPs"/>
                             </connections>
