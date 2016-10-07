@@ -36,9 +36,19 @@ class AllListsViewController: UITableViewController,
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = makeCell(for: tableView)
     let checklist = dataModel.lists[indexPath.row]
+    let count = checklist.countUncheckedItems()
     cell.textLabel!.text = checklist.name
     cell.accessoryType = .detailDisclosureButton
-    cell.detailTextLabel!.text = "\(checklist.countUncheckedItems()) Remaning"
+    
+    if checklist.items.count == 0 {
+      cell.detailTextLabel!.text = "No Items Yet..."
+    } else if count == 0 {
+      cell.detailTextLabel!.text = "All Done!"
+    } else if count == 1 {
+      cell.detailTextLabel!.text = "\(count) Item Remaning"
+    } else {
+      cell.detailTextLabel!.text = "\(count) Items Remaning"
+    }
     
     return cell
   }
