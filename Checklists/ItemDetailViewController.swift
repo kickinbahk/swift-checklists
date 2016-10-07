@@ -13,7 +13,7 @@ protocol ItemDetailViewControllerDelegate: class {
 
 class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
   @IBOutlet weak var doneBarButton: UIBarButtonItem!
-  @IBOutlet weak var textField: UITextField!
+  @IBOutlet weak var editItemTextField: UITextField!
   weak var delegate: ItemDetailViewControllerDelegate?
   var itemToEdit: ChecklistItem?
   
@@ -23,8 +23,8 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     guard let item = itemToEdit else { return }
 
     title = "Edit Item"
-    textField.text = item.text
-    textField.delegate = self // set the delegate
+    editItemTextField.text = item.text
+    editItemTextField.delegate = self // set the delegate
     doneBarButton.isEnabled = true
   }
   override func tableView(_ tableView: UITableView,
@@ -34,7 +34,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    textField.becomeFirstResponder()
+    editItemTextField.becomeFirstResponder()
   }
   
   @IBAction func cancel() {
@@ -44,11 +44,11 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
 
   @IBAction func done() {
     if let item = itemToEdit {
-      item.text = textField.text!
+      item.text = editItemTextField.text!
       delegate?.itemDetailViewController(self, didFinishEditing: item)
     } else {
       let item = ChecklistItem()
-      item.text = textField.text!
+      item.text = editItemTextField.text!
       item.checked = false
       
       delegate?.itemDetailViewController(self, didFinishAdding: item)

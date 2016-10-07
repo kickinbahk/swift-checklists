@@ -218,7 +218,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="doneBarButton" destination="EKr-jk-9U1" id="VZO-VD-qJR"/>
-                        <outlet property="textField" destination="ggq-X5-xdG" id="sws-VK-gW6"/>
+                        <outlet property="editItemTextField" destination="ggq-X5-xdG" id="PhQ-FN-fGO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5R-y0-WAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
