@@ -131,7 +131,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="hL6-k9-Lwg">
                             <connections>
-                                <action selector="done" destination="DcG-vD-iIG" id="uj7-ld-x7E"/>
+                                <action selector="done" destination="DcG-vD-iIG" id="PZd-kS-zyV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

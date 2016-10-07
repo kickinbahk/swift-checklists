@@ -117,6 +117,7 @@ class AllListsViewController: UITableViewController,
         cell.textLabel!.text = checklist.name
       }
     }
+    dismiss(animated: true, completion: nil)
   }
   
   func navigationController(_ navigationController: UINavigationController,
