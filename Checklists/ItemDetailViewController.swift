@@ -18,6 +18,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
   @IBOutlet weak var dueDateLabel: UILabel!
   weak var delegate: ItemDetailViewControllerDelegate?
   var itemToEdit: ChecklistItem?
+  var dueDate = Date()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,6 +29,10 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     editItemTextField.text = item.text
     editItemTextField.delegate = self // set the delegate
     doneBarButton.isEnabled = true
+    shouldRemindSwitch.isOn = item.shouldRemind
+    dueDate = item.dueDate
+    
+    updateDueDateLabel()
   }
   override func tableView(_ tableView: UITableView,
                           willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -47,11 +52,16 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
   @IBAction func done() {
     if let item = itemToEdit {
       item.text = editItemTextField.text!
+      item.shouldRemind = shouldRemindSwitch.isOn
+      item.dueDate = dueDate
+      
       delegate?.itemDetailViewController(self, didFinishEditing: item)
     } else {
       let item = ChecklistItem()
       item.text = editItemTextField.text!
       item.checked = false
+      item.shouldRemind = shouldRemindSwitch.isOn
+      item.dueDate = dueDate
       
       delegate?.itemDetailViewController(self, didFinishAdding: item)
     }
@@ -62,7 +72,11 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
                  replacementString string: String) -> Bool {
     let oldText = textField.text! as NSString
     let newText = oldText.replacingCharacters(in: range, with: string) as NSString
-    doneBarButton.isEnabled = ((newText.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines) as NSString).length > 0) // if someone just enters in whitespace it's not very useful
+
+    // if someone just enters in whitespace it's not very useful
+    doneBarButton.isEnabled = ((newText.trimmingCharacters(in: NSCharacterSet
+                                        .whitespacesAndNewlines) as NSString)
+                                                                  .length > 0)
     return true
   }
 
@@ -70,4 +84,13 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
       doneBarButton.isEnabled = false
       return true
   }
+  
+  
+  func updateDueDateLabel() {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .medium
+    formatter.timeStyle = .short
+    dueDateLabel.text = formatter.string(from: dueDate)
+  }
+  
 }
