@@ -164,9 +164,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="IconImageView" destination="rT3-qX-wka" id="2hx-AG-dFq"/>
                         <outlet property="doneBarButton" destination="hL6-k9-Lwg" id="pnU-Ia-Elw"/>
                         <outlet property="editListTextField" destination="dxY-56-iD1" id="Tv3-sN-3mm"/>
+                        <outlet property="iconImageView" destination="rT3-qX-wka" id="fJd-M1-Otp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOB-Mj-Qk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
