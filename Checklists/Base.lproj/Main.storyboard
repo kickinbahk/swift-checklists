@@ -290,7 +290,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Nps-2U-Mir"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Nps-2U-Mir">
+                                                    <connections>
+                                                        <action selector="shouldRemindToggled:" destination="Re9-av-DwW" eventType="valueChanged" id="xPh-SH-TJK"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="g2F-Nf-dY6" secondAttribute="bottom" constant="-5" id="1t4-MT-9xE"/>
