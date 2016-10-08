@@ -126,18 +126,23 @@
                                             <frame key="frameInset" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02C-z2-pf2">
-                                                    <frame key="frameInset" minX="166" minY="11" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02C-z2-pf2">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rT3-qX-wka">
-                                                    <frame key="frameInset" minX="292" width="36" height="36"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rT3-qX-wka">
+                                                    <frame key="frameInset" minX="301" minY="4" width="36" height="36"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="02C-z2-pf2" firstAttribute="leading" secondItem="VuY-bb-urm" secondAttribute="leading" constant="8" id="9fj-pW-Tt3"/>
+                                                <constraint firstAttribute="trailing" secondItem="rT3-qX-wka" secondAttribute="trailing" constant="5" id="BEO-ya-1Pn"/>
+                                                <constraint firstItem="rT3-qX-wka" firstAttribute="top" secondItem="VuY-bb-urm" secondAttribute="top" constant="4" id="Lb9-z8-2P0"/>
+                                                <constraint firstItem="02C-z2-pf2" firstAttribute="top" secondItem="VuY-bb-urm" secondAttribute="top" id="VkW-By-rZA"/>
+                                                <constraint firstAttribute="bottom" secondItem="rT3-qX-wka" secondAttribute="bottom" constant="3" id="tfI-Uw-mbI"/>
+                                                <constraint firstAttribute="bottom" secondItem="02C-z2-pf2" secondAttribute="bottom" id="yZD-YU-Hy9"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="hgW-UG-Jak" kind="show" identifier="PickIcon" id="rH6-08-WMj"/>
