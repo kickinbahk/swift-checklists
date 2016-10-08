@@ -119,6 +119,11 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
       delegate?.itemDetailViewController(self, didFinishAdding: item)
     }
   }
+  
+  @IBAction func dateChanged(_ datePicker: UIDatePicker) {
+    dueDate = datePicker.date
+    updateDueDateLabel()
+  }
 
   func textField(_ textField: UITextField,
                  shouldChangeCharactersIn range: NSRange,
@@ -141,6 +146,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     datePickerVisible = true
     let indexPathDatePicker = IndexPath(row: 2, section: 1)
     tableView.insertRows(at: [indexPathDatePicker], with: .fade)
+    datePicker.setDate(dueDate, animated: false)
   }
   
   func updateDueDateLabel() {
