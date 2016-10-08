@@ -13,7 +13,7 @@ protocol ListDetailViewControllerDelegate: class {
 class ListDetailViewController: UITableViewController, UITextFieldDelegate {
   @IBOutlet weak var editListTextField: UITextField!
   @IBOutlet weak var doneBarButton: UIBarButtonItem!
-  
+  @IBOutlet weak var IconImageView: UIImageView!
   weak var delegate: ListDetailViewControllerDelegate?
   
   var checklistToEdit: Checklist?
