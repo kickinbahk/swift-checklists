@@ -14,6 +14,8 @@ protocol ItemDetailViewControllerDelegate: class {
 class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
   @IBOutlet weak var doneBarButton: UIBarButtonItem!
   @IBOutlet weak var editItemTextField: UITextField!
+  @IBOutlet weak var shouldRemindSwitch: UISwitch!
+  @IBOutlet weak var dueDateLabel: UILabel!
   weak var delegate: ItemDetailViewControllerDelegate?
   var itemToEdit: ChecklistItem?
   
