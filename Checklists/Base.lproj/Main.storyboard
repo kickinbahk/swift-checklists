@@ -117,7 +117,7 @@
                                                 <constraint firstItem="dxY-56-iD1" firstAttribute="leading" secondItem="U39-CR-Oyo" secondAttribute="leading" constant="8" id="5W9-MC-Xno"/>
                                                 <constraint firstAttribute="trailing" secondItem="dxY-56-iD1" secondAttribute="trailing" constant="8" id="ZAc-xD-GN3"/>
                                                 <constraint firstAttribute="bottom" secondItem="dxY-56-iD1" secondAttribute="bottom" constant="6" id="sA0-lm-KwR"/>
-                                                <constraint firstItem="dxY-56-iD1" firstAttribute="top" secondItem="U39-CR-Oyo" secondAttribute="top" constant="6" id="ylP-7D-6dj"/>
+                                                <constraint firstItem="dxY-56-iD1" firstAttribute="top" secondItem="U39-CR-Oyo" secondAttribute="top" constant="7" id="ylP-7D-6dj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -132,7 +132,9 @@
                                             <frame key="frameInset" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02C-z2-pf2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Icon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02C-z2-pf2">
+                                                    <frame key="frameInset" minX="8" minY="7" width="235" height="30.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -145,12 +147,8 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="02C-z2-pf2" secondAttribute="bottom" id="77r-ST-sd7"/>
-                                                <constraint firstItem="rT3-qX-wka" firstAttribute="leading" secondItem="02C-z2-pf2" secondAttribute="trailing" constant="8" id="VdO-aH-yyC"/>
-                                                <constraint firstAttribute="trailing" secondItem="rT3-qX-wka" secondAttribute="trailing" id="daZ-rQ-2H7"/>
-                                                <constraint firstItem="rT3-qX-wka" firstAttribute="top" secondItem="VuY-bb-urm" secondAttribute="top" constant="4" id="mEL-ls-LZr"/>
-                                                <constraint firstItem="02C-z2-pf2" firstAttribute="top" secondItem="VuY-bb-urm" secondAttribute="top" id="vKJ-xc-86b"/>
-                                                <constraint firstItem="02C-z2-pf2" firstAttribute="leading" secondItem="VuY-bb-urm" secondAttribute="leading" constant="8" id="zIK-c7-NTy"/>
+                                                <constraint firstItem="rT3-qX-wka" firstAttribute="top" secondItem="VuY-bb-urm" secondAttribute="top" constant="4" id="UKf-bz-Umy"/>
+                                                <constraint firstAttribute="trailing" secondItem="rT3-qX-wka" secondAttribute="trailing" id="z8t-4P-k9x"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
