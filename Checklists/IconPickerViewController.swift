@@ -9,8 +9,8 @@ class IconPickerViewController: UITableViewController {
   weak var delegate: IconPickerViewControllerDelegate?
   let icons = [
     "No Icon",
-    "#imageLiteral(resourceName: "Appointments")",
-    "#imageLiteral(resourceName: "Birthdays")",
+    "Appointments",
+    "Birthdays",
     "Chores",
     "Drinks",
     "Folder",
@@ -20,7 +20,7 @@ class IconPickerViewController: UITableViewController {
     "Trips" ]
   
   override func tableView(_ tableView: UITableView,
-                          nubmerOfRowsInSection section: Int) -> Int {
+                          numberOfRowsInSection section: Int) -> Int {
     return icons.count
   }
 
@@ -30,7 +30,7 @@ class IconPickerViewController: UITableViewController {
                                              for: indexPath)
     let iconName = icons [indexPath.row]
     cell.textLabel!.text = iconName
-    cell.imageVew!.image = UIImage(named: iconName)
+    cell.imageView!.image = UIImage(named: iconName)
     
     return cell
   }

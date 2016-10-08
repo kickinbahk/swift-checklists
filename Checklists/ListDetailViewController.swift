@@ -36,9 +36,12 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
   }
   
   override func tableView(_ tableView: UITableView,
-                          willSelectRowAt indexPath: IndexPath) -> IndexPath?
-                          {
-    return nil
+                          willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    if indexPath.section == 1 {
+      return indexPath
+    } else {
+      return nil
+    }
   }
   
   @IBAction func cancel() {
