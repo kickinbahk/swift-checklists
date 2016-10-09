@@ -111,6 +111,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
       item.text = editItemTextField.text!
       item.shouldRemind = shouldRemindSwitch.isOn
       item.dueDate = dueDate
+      item.scheduleNotification()
       
       delegate?.itemDetailViewController(self, didFinishEditing: item)
     } else {
